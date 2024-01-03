@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className=' mb-44'>
       <NavBar/>
-      <header className="flex ml-10 justify-center items-center">
+      <section className="flex ml-10 justify-center items-center">
         <div className="ml-10">
           <motion.h2
             className="text-2xl ml-5 text-left"
@@ -33,7 +33,7 @@ const Home = () => {
         <div className="mx-20 ml-72 my-10">
           <Sphere />
         </div>
-      </header>
+      </section>
 
       <div className='mt-14'>
         <ArrowSvg />
