@@ -8,7 +8,7 @@ const SideBar = ({ scrollToSection }) => {
     <motion.div
       className={`${div1} ${styled.div1}`}
       initial={{ x: -1000, y: -200 }}
-      animate={{ x: 0 }}
+      animate={{ x: -10 }}
       transition={{ duration: 1 }}
     >
       <ul className={ul}>

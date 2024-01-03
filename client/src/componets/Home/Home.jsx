@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 import { paragraph1, arrowStart, paragraph2 } from './vars';
 import Sphere from './Sphere/Sphere';
 import ArrowSvg from './ArrowSvg';
-import NavBar from './NavBar/NavBar';
+import NavBar from '../NavBar/NavBar';
 
 const Home = () => {
   return (
     <div className=' mb-44'>
-      <NavBar></NavBar>
+      <NavBar/>
       <header className="flex ml-10 justify-center items-center">
         <div className="ml-10">
           <motion.h2
@@ -16,7 +16,7 @@ const Home = () => {
             animate={{ x: 0, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <span className="text-indigo-300 opacity-50">{arrowStart}</span>
+            <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{arrowStart}</span>
             {paragraph1()}
           </motion.h2>
 

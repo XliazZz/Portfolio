@@ -1,19 +1,42 @@
 import { motion } from "framer-motion";
+import React from "react";
 
-const text1 = "Hola,";
-const text2 = "bienvenidx!";
+let language = localStorage.getItem('language') || 'es';
 
-const space = ' ';
+let text1 = "";
+let text2 = "";
 
-const arrowStart = '<';
-const arrowEnd = '/>';
+let space = ' ';
 
-const text3 = "Puedo";
-const text4 = "ayudarte";
-const text5 = "a";
-const text6 = "construir";
-const text7 = "tu";
-const text8 = "sueño";
+let arrowStart = '<';
+let arrowEnd = '/>';
+
+let text3 = "";
+let text4 = "";
+let text5 = "";
+let text6 = "";
+let text7 = "";
+let text8 = "";
+
+if (language === 'es') {
+  text1 = "Hola,";
+  text2 = "bienvenidx!";
+  text3 = "Puedo";
+  text4 = "ayudarte";
+  text5 = "a";
+  text6 = "construir";
+  text7 = "tu";
+  text8 = "sueño";
+} else {
+  text1 = "Hello,";
+  text2 = "welcome!";
+  text3 = "I can";
+  text4 = `help you`;
+  text5 = "to";
+  text6 = "build";
+  text7 = "your";
+  text8 = "dream";
+}
 
 const paragraph1 = () => {
   return (
@@ -23,7 +46,7 @@ const paragraph1 = () => {
           key={index}
           initial={{ y: 0 }}
           whileHover={{ y: -10, transition: { duration: 0.3 } }}
-          className="inline-block"
+          className="inline-block dark:text-white text-black"
         >
           {letter}
         </motion.span>
@@ -34,7 +57,8 @@ const paragraph1 = () => {
           key={index}
           initial={{ y: 0 }}
           whileHover={{ y: -10, transition: { duration: 0.3 } }}
-          className="inline-block"
+          className="inline-block dark:text-white text-black"
+
         >
           {letter}
         </motion.span>
@@ -46,26 +70,38 @@ const paragraph1 = () => {
 const paragraph2 = () => {
   return (
     <>
-      {text3.split('').map((letter, index) => (
-        <motion.span
-          key={index}
-          initial={{ y: 0 }}
-          whileHover={{ y: -10, transition: { duration: 0.3 } }}
-          className="inline-block"
-        >
-          {letter}
-        </motion.span>
+      {text3.split(' ').map((word, wordIndex) => (
+        <React.Fragment key={wordIndex}>
+          {wordIndex > 0 && <span>{space}</span>}
+          {word.split('').map((letter, index) => (
+            <motion.span
+              key={index}
+              initial={{ y: 0 }}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              className="inline-block dark:text-white text-black"
+
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </React.Fragment>
       ))}
       <span>{space}</span>
-      {text4.split('').map((letter, index) => (
-        <motion.span
-          key={index}
-          initial={{ y: 0 }}
-          whileHover={{ y: -10, transition: { duration: 0.3 } }}
-          className="inline-block"
-        >
-          {letter}
-        </motion.span>
+      {text4.split(' ').map((word, wordIndex) => (
+        <React.Fragment key={wordIndex}>
+          {wordIndex > 0 && <span>{space}</span>}
+          {word.split('').map((letter, index) => (
+            <motion.span
+              key={index}
+              initial={{ y: 0 }}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              className="inline-block dark:text-white text-black"
+
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </React.Fragment>
       ))}
       <span>{space}</span>
       {text5.split('').map((letter, index) => (
@@ -73,7 +109,8 @@ const paragraph2 = () => {
           key={index}
           initial={{ y: 0 }}
           whileHover={{ y: -10, transition: { duration: 0.3 } }}
-          className="inline-block"
+          className="inline-block dark:text-white text-black"
+
         >
           {letter}
         </motion.span>
@@ -85,7 +122,8 @@ const paragraph2 = () => {
           key={index}
           initial={{ y: 0 }}
           whileHover={{ y: -10, transition: { duration: 0.3 } }}
-          className="inline-block"
+          className="inline-block dark:text-white text-black"
+
         >
           {letter}
         </motion.span>
@@ -96,7 +134,8 @@ const paragraph2 = () => {
           key={index}
           initial={{ y: 0 }}
           whileHover={{ y: -10, transition: { duration: 0.3 } }}
-          className="inline-block"
+          className="inline-block dark:text-white text-black"
+
         >
           {letter}
         </motion.span>
@@ -107,13 +146,14 @@ const paragraph2 = () => {
           key={index}
           initial={{ y: 0 }}
           whileHover={{ y: -10, transition: { duration: 0.3 } }}
-          className="inline-block"
+          className="inline-block dark:text-white text-black"
+
         >
           {letter}
         </motion.span>
       ))}
       <motion.span
-        className="text-indigo-300 opacity-50 font-bold text-6xl"
+        className="text-indigo-800 dark:text-indigo-300 opacity-50text-indigo-300 opacity-50 font-bold text-6xl"
         initial={{ x: -1000, y: -45 }}
         animate={{ x: 160, y: -45 }}  
         transition={{ duration: 1, delay: 3 }}  
@@ -123,5 +163,6 @@ const paragraph2 = () => {
     </>
   )
 }
+
 
 export { text1, text2, space, paragraph1, arrowStart, arrowEnd, paragraph2 };

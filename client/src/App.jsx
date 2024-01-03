@@ -5,6 +5,7 @@ import SideBar from './componets/SideBar/SideBar';
 import Projects from './componets/Projects/Projects';
 import Contact from './componets/Contact/Contact';
 import { useEffect, useState } from 'react';
+import ScrollTop from './componets/ScrollTop/ScrollTop';
 
 function App() {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -36,12 +37,13 @@ function App() {
   };
 
   return (
-    <div className='App'>
+    <div className='App bg-neutral-100 dark:bg-neutral-950'>
       <SideBar scrollToSection={scrollToSection} />
 
       <div id='section1'>
         <Home />
       </div>
+      <ScrollTop />
 
       <div id='section2'>
         <About hasScrolled={hasScrolled} />

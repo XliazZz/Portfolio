@@ -18,7 +18,8 @@
     "react-tagcloud": "^2.3.3",
     "styled-components": "^6.1.1",
     "sweetalert2": "^11.10.2",
-    "TagCloud": "^2.4.0"
+    "TagCloud": "^2.4.0",
+    "vercel": "^33.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Modal from "../../Modal/Modal";
 
-const Card = ({ name, url, repository, skills, description, img, complete, description2, imgs }) => {
+const Card = ({ name, url, repository, skills, description, img, complete, description2, imgs, description2Eng, descriptionEng }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleModal = () => {
@@ -14,9 +14,26 @@ const Card = ({ name, url, repository, skills, description, img, complete, descr
     setShowModal(false);
   }
 
+  let text1 = "";
+  let text2 = ""; 
+  let text3 = "";
+  let realDescription = '';
+
+  if (localStorage.getItem('language') === 'es') {
+    text1 = "Vivo";
+    text2 = "Repositorio";
+    text3 = "Ver mas";
+    realDescription = description;
+  } else {
+    text1 = "Live";
+    text2 = "Repository";
+    text3 = "See more";
+    realDescription = descriptionEng;
+  }
+
   return (
     <motion.article 
-      className="bg-gray-950 p-3 shadow-lg rounded-xl"
+      className="bg-gray-700 dark:bg-gray-900 p-3 shadow-lg rounded-xl"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1}}
       transition={{
@@ -26,25 +43,25 @@ const Card = ({ name, url, repository, skills, description, img, complete, descr
     > 
 
       <header className="card-header">
-        <h2 className="font-semibold text-left text-xl ml-2 text-gray-900 dark:text-white ">{name}</h2>
+        <h2 className="font-semibold text-left text-xl ml-2 text-gray-50 dark:text-white ">{name}</h2>
 
         <div className="content-center my-5">
           <a
             href={url}
             target="_blank"
             rel="noreferrer"
-            className="transform mouse-pointer bg-gray-800 text-sm p-2 mr-2 text-white  font-semibold rounded hover:bg-gray-700 dark:hover:bg-gray-600 hover:scale-90"
+            className="transform mouse-pointer bg-gray-800 text-sm p-2 mr-2 text-white  font-semibold rounded hover:bg-gray-500 dark:hover:bg-gray-600 hover:scale-90"
             disabled={complete === false}
           >
-            Vivo
+            {text1}
           </a>
           <a
             href={repository}
             target="_blank"
             rel="noreferrer"
-            className="transform mouse-pointer bg-gray-800 text-sm p-2 text-white font-semibold rounded hover:bg-gray-700 dark:hover:bg-gray-600 hover:scale-90 "
+            className="transform mouse-pointer bg-gray-800 text-sm p-2 text-white font-semibold rounded hover:bg-gray-500 dark:hover:bg-gray-600 hover:scale-90 "
           >
-            Repositorio
+            {text2}
           </a>
         </div>
         
@@ -57,13 +74,13 @@ const Card = ({ name, url, repository, skills, description, img, complete, descr
           className="rounded-lg"
         />
 
-        <p className="card-description m-5">{description}</p>
+        <p className="card-description m-5 text-white">{realDescription}</p>
 
         <div className="flex flex-wrap ">
           {skills && skills.map((skill, index) => (
             <motion.span 
               key={index} 
-              className="text-sm mr-2 mb-3 bg-gray-800  rounded-md p-1 cursor-pointer"
+              className="text-sm mr-2 mb-3 text-white bg-gray-800  rounded-md p-1 cursor-pointer"
               whileHover={{ scale: 1.1 }}
             >
               {skill}
@@ -73,12 +90,12 @@ const Card = ({ name, url, repository, skills, description, img, complete, descr
 
         <div className="p-3 align-bottom pt-0">
           <button
-            className="block w-full select-none rounded-lg mt-5 py-3 px-6 text-center align-middle font-sans bg-gray-900 text-xs font-bold uppercase transition-all hover:bg-gray-800 hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50"
+            className="block w-full select-none rounded-lg mt-5 py-3 px-6 text-center align-middle font-sans hover:bg-gray-500 bg-gray-600 dark:bg-gray-950 text-xs font-bold uppercase transition-all dark:hover:bg-gray-800 text-white hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50"
             type="button"
             disabled={complete === false}
             onClick={handleModal}
           >
-            Ver mas
+            {text3}
           </button>
         </div>
       </main>
@@ -91,6 +108,8 @@ const Card = ({ name, url, repository, skills, description, img, complete, descr
           onClose={handleClose}
           url={url}
           repository={repository}
+          descriptionEng={descriptionEng}
+          description2Eng={description2Eng}
         />
       )}
     </motion.article>

@@ -22,12 +22,22 @@ const Projects = () => {
     return () => window.removeEventListener('scroll', checkIfInView);
   }, []);
 
+  let text1 = "";
+
+  if (localStorage.getItem('language') === 'es') {
+    text1 = "Proyectos";
+  } else {
+    text1 = "Projects";
+  }
+
   return (
     <section className="ml-32 mb-24" id="section3">
-      <motion.h1 className="text-5xl  pt-3 text-left opacity-70 font-extrabold">
-        <span className="text-indigo-300 opacity-50">{`<`}</span>
-        Proyectos
-        <span className="text-indigo-300 opacity-50">{`>`}</span>
+      <motion.h1 
+        className="text-5xl pt-3 text-left opacity-70 font-extrabold text-black dark:text-white"
+      >
+        <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`<`}</span>
+        {text1}
+        <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`>`}</span>
       </motion.h1>
 
       <div className="grid grid-cols-3 pt-9 p-16 gap-5">
@@ -52,15 +62,17 @@ const Projects = () => {
                 complete={proyect.complete}
                 description2={proyect.description2}
                 imgs={proyect.imgs}
+                descriptionEng={proyect.descriptionEng}
+                description2Eng={proyect.description2Eng}
               />
             </motion.div>
           ))}
         </AnimatePresence>
       </div>
-      <motion.h2 className="text-5xl pr-5 text-right opacity-70 font-extrabold">
-        <span className="text-indigo-300 opacity-50">{`</`}</span>
-        Proyectos
-        <span className="text-indigo-300 opacity-50">{`>`}</span>
+      <motion.h2 className="text-5xl pr-5 text-right opacity-70 font-extrabold text-black dark:text-white">
+        <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`</`}</span>
+        {text1}
+        <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`>`}</span>
       </motion.h2>
     </section>
   );

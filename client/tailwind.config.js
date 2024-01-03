@@ -4,8 +4,13 @@ export default {
     "./src/**/*{js,jsx}",
     "./src/App"
   ],
+  "darkMode": "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customColor: '#213547'
+      }
+    },
   },
   plugins: [],
 }

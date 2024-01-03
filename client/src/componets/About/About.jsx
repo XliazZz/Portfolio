@@ -4,16 +4,30 @@ import Text from "./vars/Text"
 import SocialMedia from "./SocialMedia"
 
 const About = ({ hasScrolled }) => {
-  const img = 'https://media.licdn.com/dms/image/D4D03AQEQSHpyB0B6XA/profile-displayphoto-shrink_800_800/0/1701752410452?e=1708560000&v=beta&t=7whMrcJZD7QgL7fxDthIOwskdYkpAMPm2li9WF9iOyo'
+  const img = 'https://media.licdn.com/dms/image/D4D03AQEQSHpyB0B6XA/profile-displayphoto-shrink_800_800/0/1701752410452?e=1708560000&v=beta&t=7whMrcJZD7QgL7fxDthIOwskdYkpAMPm2li9WF9iOyo';
+
+  let text1 = "";
+  let text2 = "";
+  let text3 = "";
+
+  if (localStorage.getItem('language') === 'es') {
+    text1 = "Desarrollador web full-stack";
+    text2 = "Redes sociales";
+    text3 = "Yo";
+  } else {
+    text1 = "Full-stack web developer";
+    text2 = "Social media";
+    text3 = "Me";
+  }
 
   return (
     <div className=" ml-32 mb-24">
       <motion.h1
-        className="text-5xl pt-3 text-left opacity-70 font-extrabold"
+        className="text-5xl pt-3 text-left opacity-70 font-extrabold text-black dark:text-white"
       >
-        <span className="text-indigo-300 opacity-50">{`<`}</span>
-        {`Yo`}
-        <span className="text-indigo-300 opacity-50">{`>`}</span>
+        <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`<`}</span>
+        {text3}
+        <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`>`}</span>
       </motion.h1>
 
       <section className="ml-10">
@@ -22,9 +36,9 @@ const About = ({ hasScrolled }) => {
             <div className="flex flex-col items-center justify-between lg:flex-row ">
               <div className=" relative ">
                 <div className="lg:max-w-7xl lg:pr-2 relative z-40">
-                  <h2 className="mb-3 font-bold max-w-lg text-5xl leading-snug tracking-tight text-g1 sm:text-6xl sm:leading-snug">
+                  <h2 className="mb-3 font-bold max-w-lg text-5xl leading-snug tracking-tight text-g1 sm:text-6xl sm:leading-snug text-black dark:text-white">
                     Elias Martinez
-                    <span className="my-1 inline-block font-light px-4 text-3xl -translate-y-10 animate__animated animate__flash">Desarrollador web full-stack</span>
+                    <span className="my-1 inline-block font-light px-4 text-3xl -translate-y-10 animate__animated animate__flash">{text1}</span>
                   </h2>
                   <Text hasScrolled={ hasScrolled }/>
                 </div>
@@ -42,22 +56,22 @@ const About = ({ hasScrolled }) => {
         </div>
       </section>
 
-      <section className="flex flex-col items-center">
-        <h2 className="font-bold text-4xl mt-10 mb-5">Skills</h2>
+      <section className="flex flex-col items-center text-black dark:text-white">
+        <h2 className="font-bold text-4xl mt-10 mb-5 ">Skills</h2>
         <Skills hasScrolled={hasScrolled}/>
       </section>
 
-      <section className="mt-10">
-        <h2 className="font-light text-4xl mt-5 mb-5">Redes sociales</h2>
+      <section className="mt-10 text-black dark:text-white">
+        <h2 className="font-light text-4xl mt-5 mb-5">{text2}</h2>
         <SocialMedia />
       </section>
 
       <motion.h2
-        className="text-5xl pr-5 pt-3 text-right opacity-70 font-bold"
+        className="text-5xl pr-5 pt-3 text-right opacity-70 font-bold text-black dark:text-white"
       >
-        <span className="text-indigo-300 opacity-50">{`</`}</span>
-        {`Yo`}
-        <span className="text-indigo-300 opacity-50">{`>`}</span>
+        <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`</`}</span>
+        {text3}
+        <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`>`}</span>
       </motion.h2>
     </div>
   )

@@ -1,12 +1,29 @@
 import { motion } from "framer-motion"
 
+let text1 = "";
+let text2 = "";
+let text3 = "";
+let text4 = "";
+
+if (localStorage.getItem('language') === 'es') {
+  text1 = "Inicio";
+  text2 = "Yo";
+  text3 = "Proyectos";
+  text4 = "Contacto";
+} else {
+  text1 = "Home";
+  text2 = "Me";
+  text3 = "Projects";
+  text4 = "Contact";
+}
+
 const icons = [
   {
-    name: "Inicio",
+    name: text1,
     sectionId: "section1",
     icon: 
       <motion.svg 
-        className="w-6 h-6 text-gray-800 dark:text-white" 
+        className="w-6 h-6 text-white" 
         aria-hidden="true" 
         xmlns="http://www.w3.org/2000/motion.svg" 
         fill="currentColor" 
@@ -16,11 +33,11 @@ const icons = [
       </motion.svg>
   },
   {
-    name: "Yo",
+    name: text2,
     sectionId: "section2",
     icon: 
       <motion.svg 
-        className="w-6 h-6 text-gray-800 dark:text-white" 
+        className="w-6 h-6 text-white" 
         aria-hidden="true" 
         xmlns="http://www.w3.org/2000/svg" 
         fill="currentColor" 
@@ -30,11 +47,11 @@ const icons = [
       </motion.svg>,
   },
   {
-    name: "Proyectos",
+    name: text3,
     sectionId: "section3",
     icon: 
       <motion.svg 
-        className="w-6 h-6 text-gray-800 dark:text-white" 
+        className="w-6 h-6 text-white" 
         aria-hidden="true" 
         xmlns="http://www.w3.org/2000/motion.svg" 
         fill="currentColor" 
@@ -44,11 +61,11 @@ const icons = [
       </motion.svg>,
   },
   {
-    name: "Contacto",
+    name: text4,
     sectionId: "section4",
     icon: 
       <motion.svg 
-        className="w-6 h-6 text-gray-800 dark:text-white" 
+        className="w-6 h-6 text-white" 
         aria-hidden="true" 
         xmlns="http://www.w3.org/2000/motion.svg" 
         fill="currentColor" 

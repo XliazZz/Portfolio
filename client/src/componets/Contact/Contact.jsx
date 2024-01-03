@@ -22,17 +22,26 @@ const Contact = () => {
     return () => window.removeEventListener('scroll', checkIfInView);
   }, [])
 
+  let text1 = "";
+
+  if (localStorage.getItem('language') === 'es') {
+    text1 = "Contacto";
+    
+  } else {
+    text1 = "Contact";
+  }
+
   return (
-    <motion.div className="mb-20"
+    <motion.div className="pb-20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 7 }}
       id="section4"
     >
-      <h1 className="text-5xl ml-32 pt-3 text-left opacity-70 font-extrabold">
-        <span className="text-indigo-300 opacity-50">{`<`}</span>
-        Contacto
-        <span className="text-indigo-300 opacity-50">{`>`}</span>
+      <h1 className="text-5xl ml-32 pt-3 text-left opacity-70 font-extrabold text-black dark:text-white">
+        <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`<`}</span>
+        {text1}
+        <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`>`}</span>
       </h1>
 
       <div className="flex">
@@ -47,10 +56,10 @@ const Contact = () => {
         </div>
       </div>
 
-      <h2 className="text-5xl pr-5 text-right opacity-70 font-extrabold">
-        <span className="text-indigo-300 opacity-50">{`</`}</span>
-          Contacto
-        <span className="text-indigo-300 opacity-50">{`>`}</span>
+      <h2 className="text-5xl pr-5 text-right opacity-70 font-extrabold text-black dark:text-white">
+        <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`</`}</span>
+          {text1}
+        <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`>`}</span>
       </h2>
     </motion.div>
   );
