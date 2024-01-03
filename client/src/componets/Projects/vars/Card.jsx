@@ -33,7 +33,7 @@ const Card = ({ name, url, repository, skills, description, img, complete, descr
 
   return (
     <motion.article 
-      className="bg-gray-700 dark:bg-gray-900 p-3 shadow-lg rounded-xl"
+      className="bg-gray-700 min-h-[600px] dark:bg-gray-900 p-3 shadow-lg rounded-xl"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1}}
       transition={{
@@ -71,10 +71,10 @@ const Card = ({ name, url, repository, skills, description, img, complete, descr
         <img
           src={img}
           alt={`Imagen de ${name}`}
-          className="rounded-lg"
+          className="rounded-lg min-h-[220px] max-h-[220px] object-cover"
         />
 
-        <p className="card-description m-5 text-white">{realDescription}</p>
+        <p className="card-description m-5 max-h-[120px] mb-10  text-white">{realDescription}</p>
 
         <div className="flex flex-wrap ">
           {skills && skills.map((skill, index) => (
