@@ -1,15 +1,14 @@
 import { motion } from 'framer-motion';
 import { paragraph1, arrowStart, paragraph2 } from './vars';
-import Sphere from './Sphere/Sphere';
 import ArrowSvg from './ArrowSvg';
 import NavBar from '../NavBar/NavBar';
 
 const Home = () => {
   return (
-    <div className=' mb-44'>
-      <NavBar/>
-      <header className="flex ml-10 justify-center items-center">
-        <div className="ml-10">
+    <div className='relative h-screen flex flex-col justify-between'>
+      <NavBar />
+      <header className="flex flex-col items-center justify-center h-full">
+        <div>
           <motion.h2
             className="text-2xl ml-5 text-left"
             initial={{ x: -1000, y: 0 }}
@@ -21,7 +20,7 @@ const Home = () => {
           </motion.h2>
 
           <motion.h1
-            className="text-5xl pt-5 font-bold"
+            className="text-7xl font-bold"
             initial={{ x: -1000, y: 0 }}
             animate={{ x: 0, y: 0 }}
             transition={{ duration: 1 }}
@@ -29,16 +28,10 @@ const Home = () => {
             {paragraph2()}
           </motion.h1>
         </div>
-
-        <div className="mx-20 ml-72 my-10">
-          <Sphere />
-        </div>
       </header>
-
-      <div className='mt-14'>
+      <div className='absolute bottom-0 mb-8'>
         <ArrowSvg />
       </div>
-
     </div>
   );
 };

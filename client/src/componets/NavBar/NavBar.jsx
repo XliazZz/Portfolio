@@ -54,12 +54,11 @@ const NavBar = () => {
   }, [theme])
 
   const downloadCV = () => {
-    const fileName = language === 'es' ? 'cv_espanol.pdf' : 'cv_english.pdf';
-    const link = document.createElement('a');
-    link.href = `/path/to/your/cv/${fileName}`;
-    link.download = fileName;
-    link.click();
-  };
+    const cvLink = language === 'es' ? "https://onedrive.live.com/embed?resid=CFD446DA0E049D4F%2153280&authkey=!ACF-0ySjrPEsxqs&em=2" 
+    : "https://onedrive.live.com/embed?resid=CFD446DA0E049D4F%2153279&authkey=!ABLwr80jRDOlUm0&em=2";
+
+    window.open(cvLink);
+  }
 
   return (
     <motion.nav

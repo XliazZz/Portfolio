@@ -14,6 +14,7 @@ import tailwind from "../../../assets/skills/tailwind.svg";
 import jwt from "../../../assets/skills/jwt.svg";
 import restapi from "../../../assets/skills/restapi.svg";
 import oauth from "../../../assets/skills/oauth.svg";
+import aws from "../../../assets/skills/aws-rds.svg";
 import { motion } from "framer-motion";
 
 const Skills = ({ hasScrolled }) => {
@@ -34,6 +35,7 @@ const Skills = ({ hasScrolled }) => {
     Bootstrap: bootstrap,
     HTML5: html5,
     CSS3: css3,
+    "Amazon RDS": aws
   };
 
   return (
