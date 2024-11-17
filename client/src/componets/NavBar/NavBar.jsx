@@ -16,7 +16,14 @@ const NavBar = () => {
     }
   });
 
-  const [language, setLanguage] = useState(localStorage.getItem('language') || 'es');
+  const [language, setLanguage] = useState(() => {
+    const storedLanguage = localStorage.getItem('language');
+    if (storedLanguage === null) {
+      localStorage.setItem('language', 'es');
+      return 'es';
+    }
+    return storedLanguage;
+  });
 
   const handleLanguage = () => {
     if (language === 'es') {

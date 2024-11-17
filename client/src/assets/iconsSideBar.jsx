@@ -5,7 +5,9 @@ let text2 = "";
 let text3 = "";
 let text4 = "";
 
-if (localStorage.getItem('language') === 'es') {
+const storedLanguage = localStorage.getItem('language');
+
+if (storedLanguage === null || storedLanguage === 'es') {
   text1 = "Inicio";
   text2 = "Yo";
   text3 = "Proyectos";
