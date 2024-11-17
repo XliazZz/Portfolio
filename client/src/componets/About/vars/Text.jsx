@@ -7,7 +7,7 @@ const Text = ({ hasScrolled }) => {
   let text4 = "";
 
   if (localStorage.getItem('language') === 'es') {
-    text1 = 'Soy de Argentina, Buenos Aires. Tengo 21 años y empece a programar a principios de 2023 y desde entonces no pare. Me encanta aprender y mejorar mis habilidades.';
+    text1 = 'Soy de Argentina, Buenos Aires. Tengo 22 años y empece a programar a principios de 2023 y desde entonces no pare. Me encanta aprender y mejorar mis habilidades.';
 
     text2 = "Desarrolle proyectos con React, Redux, Express, MongoDB, PostgreSQL, NodeJS, JavaScript, Bootstrap, entre otros.";
 
@@ -15,7 +15,7 @@ const Text = ({ hasScrolled }) => {
 
     text4 = "Me gusta trabajar en equipo, soy muy responsable, me gusta aprender de los demas y ayudar.";
   } else {
-    text1 = 'I am from Argentina, Buenos Aires. I am 21 years old and I started programming at the beginning of 2023 and since then I have not stopped. I love learning and improving my skills.';
+    text1 = 'I am from Argentina, Buenos Aires. I am 22 years old and I started programming at the beginning of 2023 and since then I have not stopped. I love learning and improving my skills.';
 
     text2 = "I developed projects with React, Redux, Express, MongoDB, PostgreSQL, NodeJS, JavaScript, Bootstrap, among others.";
 

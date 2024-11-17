@@ -5,12 +5,12 @@ import NavBar from '../NavBar/NavBar';
 
 const Home = () => {
   return (
-    <div className='relative h-screen flex flex-col justify-between'>
+    <div className='relative h-screen flex flex-col justify-between pb-20'>
       <NavBar />
       <header className="flex flex-col items-center justify-center h-full">
         <div>
           <motion.h2
-            className="text-2xl ml-5 text-left"
+            className="text-2xl ml-5 text-left cursor-default mb-4"
             initial={{ x: -1000, y: 0 }}
             animate={{ x: 0, y: 0 }}
             transition={{ duration: 1 }}
@@ -20,7 +20,7 @@ const Home = () => {
           </motion.h2>
 
           <motion.h1
-            className="text-7xl font-bold"
+            className="text-7xl font-bold cursor-default mt-2"
             initial={{ x: -1000, y: 0 }}
             animate={{ x: 0, y: 0 }}
             transition={{ duration: 1 }}

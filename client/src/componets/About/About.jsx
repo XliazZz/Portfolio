@@ -4,7 +4,7 @@ import Text from "./vars/Text"
 import SocialMedia from "./SocialMedia"
 
 const About = ({ hasScrolled }) => {
-  const img = 'https://media.licdn.com/dms/image/D4D03AQEQSHpyB0B6XA/profile-displayphoto-shrink_800_800/0/1701752410452?e=1708560000&v=beta&t=7whMrcJZD7QgL7fxDthIOwskdYkpAMPm2li9WF9iOyo';
+  const img = 'https://res.cloudinary.com/do5ubt5g0/image/upload/v1705000572/Captura_desde_2024-01-11_16-15-54_nyzzpe.png';
 
   let text1 = "";
   let text2 = "";
