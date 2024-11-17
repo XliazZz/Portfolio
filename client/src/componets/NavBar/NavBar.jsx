@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import cvEspañol from "../../utils/cvs/CV español.pdf";
+import cvEnglish from "../../utils/cvs/cv english.pdf"
 
 const NavBar = () => {
 
@@ -54,11 +56,10 @@ const NavBar = () => {
   }, [theme])
 
   const downloadCV = () => {
-    const cvLink = language === 'es' ? "https://onedrive.live.com/embed?resid=CFD446DA0E049D4F%2153280&authkey=!ACF-0ySjrPEsxqs&em=2" 
-    : "https://onedrive.live.com/embed?resid=CFD446DA0E049D4F%2153279&authkey=!ABLwr80jRDOlUm0&em=2";
-
-    window.open(cvLink);
-  }
+    return language === 'es'
+      ? cvEspañol
+      : cvEnglish;
+  };
 
   return (
     <motion.nav
@@ -138,10 +139,11 @@ const NavBar = () => {
               </motion.svg>
           </motion.button>
 
-        <motion.button 
+        <motion.a 
           className="cursor-pointer"
           title={text4}
-          onClick={downloadCV}
+          href={downloadCV()} // Asegúrate de pasar el enlace generado aquí
+          download
         >
           <motion.svg 
             className="dark:text-indigo-300 dark:hover:text-indigo-500 w-8 h-8 text-indigo-500 hover:text-indigo-300 mx-3" 
@@ -155,7 +157,7 @@ const NavBar = () => {
             <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2Zm-3 15H4.828a1 1 0 0 1 0-2h6.238a1 1 0 0 1 0 2Zm0-4H4.828a1 1 0 0 1 0-2h6.238a1 1 0 1 1 0 2Z"/>
             <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z"/>
           </motion.svg>
-        </motion.button>
+        </motion.a>
         
         </div>
       </div>
