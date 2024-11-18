@@ -30,7 +30,7 @@ const About = ({ hasScrolled }) => {
         <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`>`}</span>
       </motion.h1>
 
-      <section className="ml-10">
+      <div className="ml-10">
         <div className=" relative flex items-center justify-center overflow-hidden z-50 ">
           <div className="relative mx-auto h-full px-2  pb-20  md:pb-10 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
             <div className="flex flex-col items-center justify-between lg:flex-row ">
@@ -54,17 +54,17 @@ const About = ({ hasScrolled }) => {
             </div>
           </div> 
         </div>
-      </section>
+      </div>
 
-      <section className="flex flex-col items-center text-black dark:text-white">
+      <div className="flex flex-col items-center text-black dark:text-white">
         <h2 className="font-bold text-4xl mt-10 mb-5 ">Skills</h2>
         <Skills hasScrolled={hasScrolled}/>
-      </section>
+      </div>
 
-      <section className="mt-10 text-black dark:text-white">
+      <div className="mt-10 text-black dark:text-white">
         <h2 className="font-light text-4xl mt-5 mb-5">{text2}</h2>
         <SocialMedia />
-      </section>
+      </div>
 
       <motion.h2
         className="text-5xl pr-5 pt-3 text-right opacity-70 font-bold text-black dark:text-white"

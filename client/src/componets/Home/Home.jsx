@@ -1,12 +1,10 @@
 import { motion } from 'framer-motion';
 import { paragraph1, arrowStart, paragraph2 } from './vars';
 import ArrowSvg from './ArrowSvg';
-import NavBar from '../NavBar/NavBar';
 
 const Home = () => {
   return (
-    <div className='relative h-screen flex flex-col justify-between pb-20'>
-      <NavBar />
+    <div className='relative h-screen flex flex-col justify-between pb-44'>
       <header className="flex flex-col items-center justify-center h-full">
         <div>
           <motion.h2
@@ -29,7 +27,7 @@ const Home = () => {
           </motion.h1>
         </div>
       </header>
-      <div className='absolute bottom-0 mb-8'>
+      <div className='fixed bottom-0 mb-8'>
         <ArrowSvg />
       </div>
     </div>
