@@ -16,7 +16,7 @@ const About = ({ hasScrolled }) => {
     text3 = "Yo";
   } else {
     text1 = "Full-stack web developer";
-    text2 = "Social media";
+    text2 = "My social media accounts";
     text3 = "Me";
   }
 
@@ -47,7 +47,7 @@ const About = ({ hasScrolled }) => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="my-6 mx-auto h-10 w-10 animate-bounce rounded-full bg-white p-1 lg:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16 17l-4 4m0 0l-4-4m4 4V3"></path>
                 </svg>
-                <div className="abg-orange-400 h-80 w-80  overflow-hidden rounded-[6rem] rounded-br-none rounded-tl-none">
+                <div className="abg-orange-400 h-80 w-80  overflow-hidden rounded-[2rem] rounded-br-none rounded-tl-none">
                   <img src={img}/>
                 </div>
               </div>
@@ -62,7 +62,7 @@ const About = ({ hasScrolled }) => {
       </div>
 
       <div className="mt-10 text-black dark:text-white">
-        <h2 className="font-light text-4xl mt-5 mb-5">{text2}</h2>
+        <h2 className="font-light text-4xl mt-5 mb-5 italic">{text2}</h2>
         <SocialMedia />
       </div>
 

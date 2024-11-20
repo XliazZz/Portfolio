@@ -8,9 +8,9 @@ const ContactCard = () => {
   let text3 = "";
 
   if (localStorage.getItem('language') === 'es') {
-    text1 = "Contactame";
+    text1 = "Contáctame";
     text2 = "Teléfono";
-    text3 = "Hablame a mi celular";
+    text3 = "Háblame a mi celular";
   } else {
     text1 = "Contact me";
     text2 = "Phone";

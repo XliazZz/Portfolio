@@ -49,7 +49,7 @@ const Skills = ({ hasScrolled }) => {
             transition={{ duration: 0.3, delay: i / 10, repeat: Infinity, repeatDelay: 10 }}
             animate={hasScrolled ? { rotate: 360, repeatCount: Infinity, duration: 10, opacity: 1 } : {}}
             key={i}
-            className="flex mb-8 cursor-pointer bg-zinc-600 rounded-xl me-2 p-2 md:me-6 items-center justify-center relative group"
+            className="flex mb-8 cursor-default bg-zinc-600 rounded-xl me-2 p-2 md:me-6 items-center justify-center relative group"
           >
             <img src={skills[skill]} alt={skill} className="w-10 h-10" />
             

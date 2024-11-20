@@ -19,9 +19,7 @@ if (storedLanguage === null || storedLanguage === 'es') {
   text4 = "Contact";
 }
 
-const iconsDinamic = (active) => {
-  console.log(active);
-  
+const iconsDinamic = (active) => {  
   const icons = [
     {
       name: text1,

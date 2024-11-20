@@ -2,6 +2,21 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Modal from "../../Modal/Modal";
+import react from "../../../assets/skills/react.svg";
+import redux from "../../../assets/skills/redux.svg";
+import express from "../../../assets/skills/express.svg";
+import mongodb from "../../../assets/skills/mongo.svg";
+import postgresql from "../../../assets/skills/postgresql.svg";
+import nodejs from "../../../assets/skills/node.svg";
+import javascript from "../../../assets/skills/javascript.svg";
+import html5 from "../../../assets/skills/html.svg";
+import css3 from "../../../assets/skills/css.svg";
+import bootstrap from "../../../assets/skills/bootstrap.svg";
+import tailwind from "../../../assets/skills/tailwind.svg";
+import jwt from "../../../assets/skills/jwt.svg";
+import restapi from "../../../assets/skills/restapi.svg";
+import oauth from "../../../assets/skills/oauth.svg";
+import aws from "../../../assets/skills/aws-rds.svg";
 
 const Card = ({ name, url, repository, skills, description, img, complete, description2, imgs, description2Eng, descriptionEng }) => {
   const [showModal, setShowModal] = useState(false);
@@ -20,85 +35,113 @@ const Card = ({ name, url, repository, skills, description, img, complete, descr
   let realDescription = '';
 
   if (localStorage.getItem('language') === 'es') {
-    text1 = "Vivo";
+    text1 = "WEB";
     text2 = "Repositorio";
     text3 = "Ver mas";
     realDescription = description;
   } else {
-    text1 = "Live";
+    text1 = "WEB";
     text2 = "Repository";
     text3 = "See more";
     realDescription = descriptionEng;
   }
 
+  const skillsList = [
+    { name: "React", img: react },
+    { name: "Redux", img: redux },
+    { name: "Express", img: express },
+    { name: "MongoDB", img: mongodb },
+    { name: "PostgreSQL", img: postgresql },
+    { name: "Node", img: nodejs },
+    { name: "Javascript", img: javascript },
+    { name: "HTML", img: html5 },
+    { name: "CSS", img: css3 },
+    { name: "Bootstrap", img: bootstrap },
+    { name: "Tailwind", img: tailwind },
+    { name: "JWT", img: jwt },
+    { name: "REST API", img: restapi },
+    { name: "OAuth", img: oauth },
+    { name: "AWS RDS", img: aws },
+  ]
+
+  const skillsImg = skillsList
+    .filter(skill => skills.includes(skill.name))
+    .map((skill) => (
+      <motion.img
+        key={skill.name}
+        src={skill.img}
+        alt={skill.name}
+        className="h-10 w-10 rounded-full m-1 bg-indigo-900 p-1"
+        title={skill.name}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.5,
+          delay: 0.2
+        }}
+      />
+    ));
+
   return (
     <motion.article 
-      className="bg-gray-700 min-h-[600px] dark:bg-gray-900 p-3 shadow-lg rounded-xl"
+      className="bg-[#818CF8] h-full dark:bg-[#7C7FFF] p-3 rounded-xl shadow-custom-blue flex flex-col"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1}}
+      animate={{ opacity: 1 }}
       transition={{
         duration: 1,  
         delay: 0.9  
       }}
-    > 
-
+    >
       <header className="card-header">
-        <h2 className="font-semibold text-left text-xl ml-2 text-gray-50 dark:text-white ">{name}</h2>
+        <h2 className="font-bold text-left text-xl ml-2 text-gray-50 dark:text-white ">{name}</h2>
 
         <div className="content-center my-5">
-          <a
+          <motion.a
             href={url}
             target="_blank"
             rel="noreferrer"
-            className="transform mouse-pointer bg-gray-800 text-sm p-2 mr-2 text-white  font-semibold rounded hover:bg-gray-500 dark:hover:bg-gray-600 hover:scale-90"
-            disabled={complete === false}
+            className="transform mouse-pointer bg-[#3d41aa] text-sm p-2 mr-2 text-white font-semibold rounded hover:scale-90"
+            whileHover={{ backgroundColor: "#5C61DB", transition: { duration: 0.2 } }}
           >
             {text1}
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href={repository}
             target="_blank"
             rel="noreferrer"
-            className="transform mouse-pointer bg-gray-800 text-sm p-2 text-white font-semibold rounded hover:bg-gray-500 dark:hover:bg-gray-600 hover:scale-90 "
+            className="transform mouse-pointer bg-[#3d41aa] text-sm p-2 text-white font-semibold rounded hover:scale-90"
+            whileHover={{ backgroundColor: "#5C61DB", transition: { duration: 0.2 } }}
           >
             {text2}
-          </a>
+          </motion.a>
         </div>
-        
       </header>
 
-      <main className="card-content mt-7">
+      <main className="card-content mt-auto flex-grow content-center">
         <img
           src={img}
           alt={`Imagen de ${name}`}
-          className="rounded-lg min-h-[220px] max-h-[220px] object-cover"
+          className="rounded-sm min-h-[220px] max-h-[220px] object-cover shadow-indigo-600 shadow-md"
         />
-
-        <p className="card-description m-5 max-h-[120px] mb-10  text-white">{realDescription}</p>
-
-        <div className="flex flex-wrap ">
-          {skills && skills.map((skill, index) => (
-            <motion.span 
-              key={index} 
-              className="text-sm mr-2 mb-3 text-white bg-gray-800  rounded-md p-1 cursor-pointer"
-              whileHover={{ scale: 1.1 }}
-            >
-              {skill}
-            </motion.span>
-          ))}
-        </div>
-
-        <div className="p-3 align-bottom pt-0">
-          <button
-            className="block w-full select-none rounded-lg mt-5 py-3 px-6 text-center align-middle font-sans hover:bg-gray-500 bg-gray-600 dark:bg-gray-950 text-xs font-bold uppercase transition-all dark:hover:bg-gray-800 text-white hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50"
-            type="button"
-            disabled={complete === false}
-            onClick={handleModal}
-          >
-            {text3}
-          </button>
+        <p className="card-description w-full mt-2 text-white">{realDescription}</p>
+        <div className="flex flex-wrap justify-center my-2 rounded-lg w-full p-3">
+          {skillsImg}
         </div>
       </main>
+
+      <div className="mt-1">
+        <motion.button
+          className="block w-full select-none rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase transition-all text-white
+          bg-[#3d41aa] disabled:pointer-events-none disabled:opacity-50"
+          type="button"
+          disabled={complete === false}
+          onClick={handleModal}
+          whileHover={{ backgroundColor: "#5C61DB", transition: { duration: 0.2 } }}
+        >
+          {text3}
+        </motion.button>
+      </div>
+
       {showModal && (
         <Modal
           name={name}
@@ -112,8 +155,12 @@ const Card = ({ name, url, repository, skills, description, img, complete, descr
           description2Eng={description2Eng}
         />
       )}
+
     </motion.article>
+
   );
 };
 
 export default Card;
+
+//probar cambio de color del div donde estan las skills
