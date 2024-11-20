@@ -16,7 +16,7 @@ const Carousel = ({ imgs }) => {
   return (
     <div
       id="carouselExampleIndicators"
-      className="relative"
+      className="relative shadow-custom-blue"
       data-te-carousel-init
       data-te-ride="carousel">
 

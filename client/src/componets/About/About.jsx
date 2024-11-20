@@ -4,7 +4,7 @@ import Text from "./vars/Text"
 import SocialMedia from "./SocialMedia"
 
 const About = ({ hasScrolled }) => {
-  const img = 'https://media.licdn.com/dms/image/D4D03AQEQSHpyB0B6XA/profile-displayphoto-shrink_800_800/0/1701752410452?e=1708560000&v=beta&t=7whMrcJZD7QgL7fxDthIOwskdYkpAMPm2li9WF9iOyo';
+  const img = 'https://res.cloudinary.com/do5ubt5g0/image/upload/v1705000572/Captura_desde_2024-01-11_16-15-54_nyzzpe.png';
 
   let text1 = "";
   let text2 = "";
@@ -16,7 +16,7 @@ const About = ({ hasScrolled }) => {
     text3 = "Yo";
   } else {
     text1 = "Full-stack web developer";
-    text2 = "Social media";
+    text2 = "My social media accounts";
     text3 = "Me";
   }
 
@@ -30,7 +30,7 @@ const About = ({ hasScrolled }) => {
         <span className="text-indigo-800 dark:text-indigo-300 opacity-50">{`>`}</span>
       </motion.h1>
 
-      <section className="ml-10">
+      <div className="ml-10">
         <div className=" relative flex items-center justify-center overflow-hidden z-50 ">
           <div className="relative mx-auto h-full px-2  pb-20  md:pb-10 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
             <div className="flex flex-col items-center justify-between lg:flex-row ">
@@ -47,24 +47,24 @@ const About = ({ hasScrolled }) => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="my-6 mx-auto h-10 w-10 animate-bounce rounded-full bg-white p-1 lg:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16 17l-4 4m0 0l-4-4m4 4V3"></path>
                 </svg>
-                <div className="abg-orange-400 h-80 w-80  overflow-hidden rounded-[6rem] rounded-br-none rounded-tl-none">
+                <div className="abg-orange-400 h-80 w-80  overflow-hidden rounded-[2rem] rounded-br-none rounded-tl-none">
                   <img src={img}/>
                 </div>
               </div>
             </div>
           </div> 
         </div>
-      </section>
+      </div>
 
-      <section className="flex flex-col items-center text-black dark:text-white">
+      <div className="flex flex-col items-center text-black dark:text-white">
         <h2 className="font-bold text-4xl mt-10 mb-5 ">Skills</h2>
         <Skills hasScrolled={hasScrolled}/>
-      </section>
+      </div>
 
-      <section className="mt-10 text-black dark:text-white">
-        <h2 className="font-light text-4xl mt-5 mb-5">{text2}</h2>
+      <div className="mt-10 text-black dark:text-white">
+        <h2 className="font-light text-4xl mt-5 mb-5 italic">{text2}</h2>
         <SocialMedia />
-      </section>
+      </div>
 
       <motion.h2
         className="text-5xl pr-5 pt-3 text-right opacity-70 font-bold text-black dark:text-white"

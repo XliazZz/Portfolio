@@ -26,16 +26,16 @@ if (language === 'es') {
   text5 = "a";
   text6 = "construir";
   text7 = "tu";
-  text8 = "sueño";
+  text8 = "visión";
 } else {
   text1 = "Hello,";
   text2 = "welcome!";
   text3 = "I can";
-  text4 = `help you`;
+  text4 = "help you";
   text5 = "to";
-  text6 = "build";
+  text6 = "make";
   text7 = "your";
-  text8 = "dream";
+  text8 = "vision real";  
 }
 
 const paragraph1 = () => {
@@ -122,8 +122,7 @@ const paragraph2 = () => {
           key={index}
           initial={{ y: 0 }}
           whileHover={{ y: -10, transition: { duration: 0.3 } }}
-          className="inline-block dark:text-white text-black"
-
+          className="inline-block dark:text-white text-black mt-2"
         >
           {letter}
         </motion.span>
@@ -141,16 +140,21 @@ const paragraph2 = () => {
         </motion.span>
       ))}
       <span>{space}</span>
-      {text8.split('').map((letter, index) => (
-        <motion.span
-          key={index}
-          initial={{ y: 0 }}
-          whileHover={{ y: -10, transition: { duration: 0.3 } }}
-          className="inline-block dark:text-white text-black"
+      {text8.split(' ').map((word, wordIndex) => (
+        <React.Fragment key={wordIndex}>
+          {wordIndex > 0 && <span>{space}</span>}
+          {word.split('').map((letter, index) => (
+            <motion.span
+              key={index}
+              initial={{ y: 0 }}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              className="inline-block dark:text-white text-black"
 
-        >
-          {letter}
-        </motion.span>
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </React.Fragment>
       ))}
       <motion.span
         className="text-indigo-800 dark:text-indigo-300 opacity-50text-indigo-300 opacity-50 font-bold text-6xl"
