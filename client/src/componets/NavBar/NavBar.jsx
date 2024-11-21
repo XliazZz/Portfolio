@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import cvEspañol from "../../utils/cvs/cv español.pdf";
-import cvEnglish from "../../utils/cvs/cv english.pdf"
+import cvEspañol from "./cvespanol.pdf";
+import cvEnglish from "./cvenglish.pdf";
 
 const NavBar = () => {
 
