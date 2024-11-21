@@ -49,8 +49,8 @@ const Contact = () => {
           <ContactCard />
         </div>
 
-        <div className="flex-1 ml-14 p-12">
-          <div className="mx-auto max-w-[550px]">
+        <div className="flex-1 ml-24 p-12">
+          <div className="mx-auto">
             <Form />
           </div>
         </div>

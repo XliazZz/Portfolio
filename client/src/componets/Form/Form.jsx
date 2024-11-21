@@ -107,12 +107,14 @@ const Form = () => {
   return (
     <form 
       onSubmit={handleSubmit} 
-      className="bg-gray-700 dark:bg-gray-900 rounded-xl p-3"
+      className="rounded-2xl p-3 shadow-custom-blue w-[80%]
+      bg-[#818CF8]
+      dark:bg-[#7C7FFF] "
     >
       <div className="mb-5 ">
         <label
           htmlFor="name"
-          className="mb-3 block text-base font-medium text-indigo-100 dark:text-indigo-200"
+          className="mb-3 block text-base font-medium text-indigo-950 dark:text-gray-950"
         >
           {text1}
         </label>
@@ -123,14 +125,14 @@ const Form = () => {
           value={formState.name}
           onChange={handleChange}
           placeholder={text5}
-          className="w-full rounded-md border border-[#000000] dark:bg-gray-950 bg-gray-900 py-3 px-6 text-base font-medium text-white outline-none focus:border-[#6A64F1] focus:shadow-md"
+          className="w-full rounded-md border border-[#000000] dark:bg-[#0A0A0A] placeholder-gray-600 text-indigo-950 bg-white py-3 px-6 text-base font-medium outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
       </div>
 
       <div className="mb-5">
         <label
           htmlFor="email"
-          className="mb-3 block text-base font-medium text-indigo-100 dark:text-indigo-200"
+          className="mb-3 block text-base font-medium text-indigo-950 dark:text-gray-950"
         >
           {text2}
         </label>
@@ -141,14 +143,14 @@ const Form = () => {
           value={formState.email}
           onChange={handleChange}
           placeholder="ejemplo@dominio.com"
-          className="w-full rounded-md border dark:bg-gray-950 border-[#000000] bg-gray-900 py-3 px-6 text-base font-medium text-white outline-none focus:border-[#6A64F1] focus:shadow-md"
+          className="w-full rounded-md border dark:bg-[#0A0A0A] border-[#000000] placeholder-gray-600 text-indigo-950 py-3 px-6 text-base font-medium outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
       </div>
 
       <div className="mb-5">
         <label
           htmlFor="subject"
-          className="mb-3 block text-base font-medium text-indigo-100 dark:text-indigo-200"
+          className="mb-3 block text-base font-medium text-indigo-950 dark:text-gray-950"
         >
           {text3}
         </label>
@@ -159,14 +161,14 @@ const Form = () => {
           value={formState.subject}
           onChange={handleChange}
           placeholder={text6}
-          className="w-full rounded-md border dark:bg-gray-950 border-[#000000] bg-gray-900 py-3 px-6 text-base font-medium text-white outline-none focus:border-[#6A64F1] focus:shadow-md"
+          className="w-full rounded-md border dark:bg-[#0A0A0A] border-[#000000] placeholder-gray-600 text-indigo-950 py-3 px-6 text-base font-medium outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
       </div>
       
       <div className="my-5">
         <label
           htmlFor="message"
-          className="mb-3 block text-base font-medium text-indigo-100 dark:text-indigo-200"
+          className="mb-3 block text-base font-medium text-indigo-950 dark:text-gray-950"
         >
           {text4}
         </label>
@@ -177,13 +179,13 @@ const Form = () => {
           placeholder={text7}
           value={formState.message}
           onChange={handleChange}
-          className="w-full rounded-md border dark:bg-gray-950 border-[#000000] bg-gray-900 py-3 px-6 text-base font-medium text-white outline-none focus:border-[#6A64F1] focus:shadow-md"
+          className="w-full rounded-md border dark:bg-[#0A0A0A] border-[#000000] placeholder-gray-600 text-indigo-950 py-3 px-6 text-base font-medium outline-none focus:border-[#6A64F1] focus:shadow-md"
         ></textarea>
       </div>
 
       <div>
         <motion.button
-          className="hover:shadow-htmlForm rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold disabled:hover:bg-[#6A64F1] hover:bg-indigo-600 text-white outline-none disabled:opacity-50 disabled:cursor-not-allowed mb-3"
+          className="hover:shadow-htmlForm rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold disabled:hover:bg-[#6A64F1] dark:bg-indigo-700 hover:bg-indigo-600 text-white outline-none disabled:opacity-50 disabled:cursor-not-allowed mb-3"
           type="submit"
           disabled={formState.name === "" || formState.email === "" || formState.subject === "" || formState.message === ""}
           whileTap={{ scale: 0.9 }}
