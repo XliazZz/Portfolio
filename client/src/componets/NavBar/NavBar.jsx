@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import cvEspañol from "../../utils/cvs/CV español.pdf";
+import cvEspañol from "../../utils/cvs/cv español.pdf";
 import cvEnglish from "../../utils/cvs/cv english.pdf"
 
 const NavBar = () => {
@@ -149,7 +149,7 @@ const NavBar = () => {
         <motion.a 
           className="cursor-pointer"
           title={text4}
-          href={downloadCV()} // Asegúrate de pasar el enlace generado aquí
+          href={downloadCV()}
           download
         >
           <motion.svg 
