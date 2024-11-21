@@ -45,12 +45,16 @@ const Contact = () => {
       </h1>
 
       <div className="flex">
-        <div className="flex-1 p-12">
-          <ContactCard />
+        <div className="flex-1 my-auto">
+          <div className="mx-auto ml-[190px]">
+            <ContactCard />
+          </div>
         </div>
 
-        <div className="flex-1 ml-14 p-12">
-          <div className="mx-auto max-w-[550px]">
+        <p className="px-10"></p>
+
+        <div className="flex-1 my-auto mr-6">
+          <div className="mx-auto p-11 bg-indigo-300 dark:bg-indigo-950 rounded-2xl w-[90%]">
             <Form />
           </div>
         </div>
