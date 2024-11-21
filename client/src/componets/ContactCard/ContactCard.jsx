@@ -14,7 +14,7 @@ const ContactCard = () => {
   }
 
   return (
-    <div className="container text-white p-8 ml-28 pt-0 mt-0 flex flex-col mx-auto ">
+    <div className="container text-white pt-0 mt-0 flex flex-col mx-auto my-auto w-[100%]">
       <div className="w-full ">
         <div className="container flex flex-col items-center gap-16 mx-auto my-10">
           <div className="grid w-full gap-5">
